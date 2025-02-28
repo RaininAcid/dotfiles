@@ -1,0 +1,71 @@
+{
+  "position": "top",
+    "margin-top" : 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "height" : 28,
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+    "hyprland/language",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "clock",
+    ],
+    "hyprland/window": {
+      "format": "  {}",
+      "max-length": 35,
+      "rewrite": {
+        "": "Hyprland"
+      },
+      "separate-outputs": true,
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": "[]",
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "*": 4, // 5 workspaces by default on every monitor
+        "HDMI-A-1": 3 // but only three on HDMI-A-1
+      },
+    },
+    "clock": {
+      "tooltip-format": "<big>[{:%Y %B}]</big>\n<tt><small>[{calendar}]</small></tt>",
+      "format-alt": "[{:%Y-%m-%d}]"
+    },
+    "hyprland/language": {
+      "format": "{}"
+    },
+    "cpu": {
+      "interval": 5,
+      "format": "[CPU {usage}%]",
+      "tooltip": true
+    },
+    "memory": {
+      "format": "[MEM {}%]"
+    },
+    "pulseaudio": {
+      "format": "[VOL {volume}%]",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+}
